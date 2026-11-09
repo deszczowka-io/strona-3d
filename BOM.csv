@@ -1,0 +1,57 @@
+Lp.,Dostawca,Nazwa,Indeks / ID,EAN,Ilość,Cena jedn. brutto [zł],Wartość brutto [zł]
+1,Botland,"Raspberry Pi 4 model B WiFi DualBand Bluetooth 4GB RAM 1,8GHz",RPI-14647,5056561800349,1,499,499
+2,Botland,"Zasilacz USB C 5,1V / 3A do Raspberry Pi 4 oryginalny - czarny",RPI-14348,5056561801179,1,39,39
+3,Botland,Radiator 40x30x5mm dla Raspberry Pi 4 z taśmą termoprzewodzącą - srebrny,ODS-15694,5904422377946,1,"24,9","24,9"
+4,Botland,Karta pamięci Goodram M1AA microSD 32GB 100MB/s UHS-I klasa 10 z adapterem,KAP-02361,5908267930144,1,"24,9","24,9"
+5,Botland,SIM7600G-H 4G HAT (B) - nakładka GNSS/LTE 4G/3G/2G do Raspberry Pi - Waveshare 19485,WSR-20154,,1,459,459
+6,Botland,Kondensator elektrolityczny 100uF/35V 6x12mm 105C THT - 10szt.,PAS-00898,5903351248235,2,"1,5",3
+7,Botland,"Rezystor justPi THT CF węglowy 1/4W 4,7kΩ - 30szt",JUS-20152,5904422329303,2,"1,9","3,8"
+8,Botland,ESP32 WiFi + BT 4.2 - platforma z modułem ESP-WROOM-32 zgodny z ESP32-DevKit,MOD-08893,5904422337438,4,"49,9","199,6"
+9,Botland,DFRobot Gravity - izolator sygnału analogowego,DFR-09529,6959420912391,5,"79,5","397,5"
+10,Botland,"Konwerter poziomów logicznych dwukierunkowy, 4-kanałowy - Pololu 2595",PLL-02523,5903351248709,4,"12,9","51,6"
+11,Botland,DFRobot Gravity przetwornik ADC ADS1115 16-bitowy - 4-kanałowy,DFR-12472,6959420913589,3,"49,9","149,7"
+12,Botland,Ogniwo 18650 Li-Ion Samsung INR18650-35E 3400mAh,BAL-15216,5904422343071,6,"29,9","179,4"
+13,Botland,Koszyk na 2 akumulatory typu 18650 bez przewodów,DNG-16517,5904422344603,4,"5,9","23,6"
+14,Botland,Mosiężny gwint - insert do druku 3D - różne rozmiary - zestaw 500 sztuk - justPi,JUS-22040,5904422383558,2,"49,9","99,8"
+15,Botland,U3V16F5 - przetwornica step-up - 5V 2A - Pololu 4941,PLL-22475,,3,"27,9","83,7"
+16,Botland,Plecionka do odsysania cyny 3 mm,NSZ-01478,5902270704112,3,"6,9","20,7"
+17,Botland,"Bezpiecznik WTA 5x20mm - 250V/0,5A - 10szt.",KAB-05469,5903351241038,3,"2,9","8,7"
+18,Botland,"Filament Rosa3D ASA + 10CF 1,75mm 1kg - z wielorazową szpulą - Black",ROS-27085,5907753137333,3,"159,9","479,7"
+19,Botland,"Filament Rosa3D Flex 96A 1,75mm 1kg - z wielorazową szpulą - Black",ROS-28091,5907753136435,1,"169,9","169,9"
+20,Botland,Obudowa plastikowa Kradex Z77 IP54 - 124x71x38mm czarna,KDX-06193,5905275013777,3,"11,99","35,97"
+21,Botland,Przełącznik On-Off RS-101-7C (T-120) - 250V/6A - czarny,UCC-08382,5904422311599,4,"2,9","11,6"
+22,Botland,"Listwa goldpin 1x40 żeńska raster 2,54mm - 10szt. - justPi",JUS-20029,5904422329174,4,"9,9","39,6"
+23,Botland,"Wtyk goldpin 1x40 prosty raster 2,54mm - czarny - 10szt. - justPi",JUS-20031,5904422329198,4,"4,9","19,6"
+24,Botland,Płytka drukowana uniwersalna dwustronna 90x150mm,DNG-20269,5904422380533,10,"9,9",99
+25,Botland,"Zestaw śrubek i podkładek dystansowych M2,5 E50 - 120szt. - justPi",JUS-24683,5904422384456,2,"69,9","139,8"
+26,Botland,Zestaw śrubek i podkładek dystansowych M3 E51 - 120szt. - justPi,JUS-24685,5904422384470,1,"39,99","39,99"
+27,Botland,Pistolet do kleju - Steinel GlueMatic 3011,LUK-29289,4007841084509,2,120,240
+28,Botland,"Klej do pistoletu gruby 11,2/200mm Megatec - czarny - 5szt.",LUK-22815,5904910102135,3,"5,6","16,8"
+29,Botland,Przepust kablowy hermetyczny IP68 - gwint PG7 - szary - 5szt.,KAB-09918,5904422376406,3,"7,9","23,7"
+30,Botland,"Zestaw przewodów połączeniowych justPi - 20cm 3x40szt. m-m, ż-ż, m-ż (120szt.)",JUS-19946,5904422328702,4,"17,9","71,6"
+31,Botland,Gravity - czujnik opadów deszczu - I2C i UART - DFRobot SEN0575,DFR-23474,6959420923632,2,149,298
+32,Kamami,Przełącznik Slide MOSFET z zabezpieczeniem przed napięciem zwrotnym MP,561033,,3,"21,37","64,11"
+33,Kamami,Narzędzie do wtapiania insertów gwintowanych do modeli z druku 3D 900M,1187639,,1,"23,85","23,85"
+34,Kamami,modDS18B20 (odpowiednik) - czujnik temperatury DS18B20 w wodoodpornej obudowie,211331,,2,"12,4","24,8"
+35,Kamami,Moduł ładowarki TP4056 li-ion USB typ C 1A z zabezpieczeniem,577708,,4,"2,99","11,96"
+36,Kamami,Klej Kropelka - 10ml,1199060,,3,"15,1","45,3"
+37,Kamami,Gravity: Analog Electrical Conductivity Sensor/Meter V2 - analogowy czujnik przewodności elektrycznej,560935,,1,"325,85","325,85"
+38,Kamami,DFRobot Gravity Analogowy czujnik zmętnienia cieczy 5V,561212,,3,"46,17","138,51"
+39,Kamami,Analog pH Sensor/Meter Pro Kit V2 - zestaw z czujnikiem analogowym do pomiaru pH,581477,,2,"282,49","564,98"
+40,Leroy Merlin,Rura kanalizacyjna PP 50 x 500 mm EQUATION,42438046,,2,"9,49","18,98"
+41,Leroy Merlin,Trójnik 50 x 50 mm 90° EQUATION,43348116,,2,"11,79","23,58"
+42,Leroy Merlin,Korek zaślepiający PP 50 mm EQUATION,43347325,,4,"5,79","23,16"
+43,Leroy Merlin,Uniwersalna pasta poślizgowa do rur PCV,95511988,,1,"18,19","18,19"
+44,Leroy Merlin,Złączka nasuwna PP 50 mm szara EQUATION,43348242,,2,"7,19","14,38"
+45,Leroy Merlin,Zacisk montażowy 50 mm 4 szt. INSTAL COMPLEX,85217721,,2,"19,8","39,6"
+46,Leroy Merlin,Obejma FRS PLUS 48 - 53 FISCHER,43160635,,6,"7,79","46,74"
+47,Leroy Merlin,Kątownik montażowy 60x60x60 mm Domax,42992404,,4,"6,19","24,76"
+48,Leroy Merlin,Sklejka drewniana wodoodporna 18 mm 60 x 30 cm Biuro Styl,45297875,,2,"83,49","166,98"
+49,Leroy Merlin,Profil aluminiowy 30x30x2 mm 200 cm - rura kwadratowa,96624047,,2,"80,62","161,24"
+50,nazwa.pl,Domena deszczowka.io + certyfikaty SSL,-,,1,246,246
+51,TERG,Pakiet startowy ORANGE One 5zł,210702,,2,5,10
+52,TERG,Przedłużacz USB-A - USB-A UNITEK YC428GBK 1 m,888115,,1,"9,99","9,99"
+53,TERG,Czytnik kart SD/microSD UGREEN CR127 Czarny,451120,,1,"29,99","29,99"
+54,TERG,"Pendrive GOODRAM UME3 Care 32GB, USB 3.2 Gen. 1",448065,,1,"37,94","37,94"
+,,,,,,,
+SUMA,,,,,144,,"6024,05"

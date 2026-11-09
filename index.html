@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Analizator Deszczówki · deszczówka.io</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<a class="skip" href="#content">Przejdź do treści</a>
+
+<nav class="navbar" id="navbar">
+  <div class="brand-wrap">
+    <div class="brand">Deszczówka<span>.io</span></div>
+    <div class="brand-imgs">
+      <img src="/img/logo-zse-full.png" alt="Zespół Szkół Elektronicznych" loading="lazy">
+      <img src="/img/viacarpatia.png" alt="Via Carpatia" loading="lazy">
+    </div>
+  </div>
+  <div class="nav-links">
+    <a href="#hero" class="active">Start</a>
+    <a href="#oprojekt">O projekcie</a>
+    <a href="#model">Model 3D</a>
+    <a href="#kontakt">Kontakt</a>
+    <a href="https://app.deszczowka.io" target="_blank" rel="noopener">Dashboard</a>
+  </div>
+</nav>
+
+<!-- Góra: zarezerwowane miejsce na animację scroll (Gimp → Three.js) -->
+<section id="hero" class="scroll-hero" aria-label="Animacja scroll">
+  <div class="hero-placeholder" id="hero-placeholder">
+    <span id="hero-text">Tu będzie animacja scroll (Gimp → Three.js)</span>
+  </div>
+</section>
+
+<main id="content">
+
+<section id="oprojekt" class="section">
+  <div class="container">
+    <div class="intro">
+      <h2>Analizator Deszczówki</h2>
+      <p class="lead">Stacja IoT do analizy jakości wody opadowej — pH, mętność, przewodność, temperatura.</p>
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <h3>O czym jest projekt</h3>
+        <p>Automatyczna stacja badawcza, która odrzuca pierwszy spadek opadu i mierzy skład chemiczny deszczówki przed jej dalszym wykorzystaniem. Dane trafiają przez jednostkę HUB do aplikacji, gdzie moduł AI wystawia czytelne rekomendacje eksploatacyjne.</p>
+      </div>
+      <div class="card">
+        <h3>Do czego służy</h3>
+        <ul>
+          <li>ochrona central deszczowych i sprzętu AGD przed zanieczyszczeniami i korozją,</li>
+          <li>ocena przydatności wody do upraw i ogrodnictwa,</li>
+          <li>lokalne monitorowanie zanieczyszczenia środowiska.</li>
+        </ul>
+      </div>
+    </div>
+
+    
+    
+    </div>
+  </div>
+</section>
+
+<section id="model" class="section alt">
+  <div class="container">
+    <h2>Model 3D — Analizator</h2>
+    <p class="lead"> Obracaj, przybliżaj i przesuwaj model.</p>
+    <div class="canvas-wrap" id="canvas-wrap">
+      <div id="canvas-root"></div>
+      <div class="canvas-fallback" aria-hidden="true">Twoja przeglądarka nie obsługuje WebGL.</div>
+      <div class="canvas-hint">LPM — obrót · PPM — przesunięcie · kółko — zoom<br>
+      1 translacja · 2 rotacja · 3 skala · 0 orbita</div>
+      <div class="canvas-controls">
+        <button type="button" data-mode="orbit" class="active">Orbita</button>
+        <button type="button" data-mode="translate">Translacja</button>
+        <button type="button" data-mode="rotate">Rotacja</button>
+        <button type="button" data-mode="scale">Skala</button>
+        <button type="button" id="btn-reset">Reset</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="kontakt" class="section">
+  <div class="container">
+    <div class="grid-2">
+      <div>
+        <h2>Kontakt</h2>
+        <p class="lead">Masz pytania, sugestie lub chcesz współpracować? Napisz do nas!</p>
+      </div>
+      <form id="contact-form" action="mailto:kontakt@deszczowka.io" method="post" enctype="text/plain">
+        <label for="name">Imię i nazwisko</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Adres e-mail</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Wiadomość</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+
+        <button type="submit">Wyślij</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="brand">Deszczówka<span>.io</span></div>
+      <p>Stacja IoT do analizy jakości wody opadowej — pH, mętność, przewodność, temperatura.</p>
+    </div>
+    <div class="footer-links">
+      <h4>Nawigacja</h4>
+      <a href="#hero">Start</a>
+      <a href="#oprojekt">O projekcie</a>
+      <a href="#model">Model 3D</a>
+      <a href="#kontakt">Kontakt</a>
+      <a href="https://app.deszczowka.io" target="_blank" rel="noopener">Dashboard</a>
+    </div>
+    <div class="footer-contact">
+      <h4>Kontakt</h4>
+      <p>Zespół Szkół Elektronicznych w Rzeszowie<br>Ul. Hetmańska 120, 35-078 Rzeszów</p>
+      <p><a href="mailto:kontakt@deszczowka.io">kontakt@deszczowka.io</a> · +48 506 280 290</p>
+    </div>
+    <div class="footer-legal">
+      <h4>Prawne</h4>
+      <a href="legal/privacy.html">Polityka prywatności</a>
+      <a href="legal/terms.html">Regulamin usługi</a>
+      <a href="legal/cookies.html">Polityka cookies</a>
+      <a href="legal/eula.html">EULA</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    Analizator Deszczówki · deszczówka.io &middot; Wszystkie prawa zastrzeżone
+  </div>
+</footer>
+
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://unpkg.com/three@0.168.0/build/three.module.js",
+    "three/addons/": "https://unpkg.com/three@0.168.0/examples/jsm/"
+  }
+}
+</script>
+<script type="module" src="js/app.js"></script>
+</body>
+</html>

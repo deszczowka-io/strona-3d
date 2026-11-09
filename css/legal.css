@@ -1,0 +1,68 @@
+/* ---------- Strony prawne — wygląd dokumentu ---------- */
+body.doc-body {
+  background: var(--bg);
+  color: var(--fg);
+}
+.doc-sheet {
+  max-width: 800px;
+  margin: 4vh auto;
+  padding: 4rem 3.5rem;
+  background: #ffffff;
+  border: 1px solid var(--line);
+  box-shadow: 0 8px 30px rgba(20, 20, 20, 0.06);
+}
+.doc-meta {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--muted);
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 0.75rem;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+}
+.doc-sheet h1 {
+  font-size: 1.75rem;
+  font-weight: 900;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  color: var(--fg);
+  margin: 0 0 0.5rem 0;
+  border-bottom: 3px solid var(--fg);
+  padding-bottom: 0.5rem;
+  display: inline-block;
+}
+.doc-sheet h2 {
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--fg);
+  margin: 2rem 0 0.75rem 0;
+}
+.doc-sheet p {
+  text-align: justify;
+  line-height: 1.85;
+  color: var(--fg);
+  font-size: 0.95rem;
+  margin-bottom: 1.25rem;
+}
+.doc-sheet strong { color: var(--fg); }
+.doc-sheet a { color: var(--fg); text-decoration: underline; }
+.doc-sheet a:hover { opacity: 0.8; }
+.doc-footer-note {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line);
+  font-size: 0.75rem;
+  color: var(--muted);
+  text-align: center;
+  letter-spacing: 0.08em;
+}
+
+/* Nawigacja w dokumentach — nieco stonowana */
+.doc-body .navbar { height: 64px; }
+.doc-body .brand-imgs img { height: 40px; }
