@@ -52,6 +52,10 @@ body {
 .brand-imgs { display: flex; gap: 0.75rem; align-items: center; }
 .brand-imgs img { height: 90px; width: auto; display: block; opacity: 0.9; }
 .brand-imgs img:hover { opacity: 1; }
+.nav-links {
+  display: flex;
+  gap: 0;
+}
 .nav-links a {
   margin-left: 2rem;
   text-decoration: none;
@@ -60,8 +64,78 @@ body {
   letter-spacing: 0.08em;
   text-transform: uppercase;
   opacity: 0.7;
+  padding: 0.75rem 0;
+  border-bottom: 2px solid transparent;
 }
-.nav-links a:hover, .nav-links a.active { opacity: 1; text-decoration: underline; }
+.nav-links a:hover, .nav-links a.active { opacity: 1; text-decoration: underline; border-bottom-color: var(--fg); }
+
+/* ---------- Hamburger ---------- */
+.nav-toggle {
+  display: none;
+  background: transparent;
+  border: 1px solid var(--fg);
+  color: var(--fg);
+  font-size: 1.5rem;
+  padding: 0.5rem 0.75rem;
+  cursor: pointer;
+  border-radius: 4px;
+  line-height: 1;
+  z-index: 60;
+}
+.nav-toggle[aria-expanded="true"] { background: var(--fg); color: var(--bg); }
+
+/* ---------- Mobile ---------- */
+@media (max-width: 900px) {
+  .navbar { height: 56px; padding: 0 1.5rem; }
+  .brand-wrap { gap: 1rem; }
+  .brand-imgs { gap: 0.5rem; }
+  .brand-imgs img { height: 36px !important; }
+  .brand { font-size: 1rem; }
+
+  .nav-toggle { display: block; }
+
+  .nav-links {
+    position: fixed;
+    inset: 56px 0 0 0;
+    background: var(--bg);
+    border-top: 1px solid var(--line);
+    flex-direction: column;
+    padding: 1.5rem;
+    transform: translateX(100%);
+    transition: transform 0.25s ease;
+    z-index: 55;
+  }
+  .nav-links.open { transform: translateX(0); }
+  .nav-links a {
+    margin: 0;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 1rem;
+    opacity: 1;
+  }
+  .nav-links a.active { border-bottom-color: var(--fg); }
+
+  .canvas-controls { bottom: 1rem; gap: 0.5rem; padding: 0.6rem 1rem; }
+  .canvas-controls button { font-size: 0.65rem; padding: 0.4rem 0.8rem; }
+
+  .grid-2 { grid-template-columns: 1fr; }
+  .card { padding: 1.5rem; }
+  .team-card { padding: 1.25rem; }
+  .section { padding: 7vh 4vw; }
+  .container { max-width: 100%; }
+
+  .canvas-wrap { aspect-ratio: 16 / 10; min-height: 300px; }
+  .canvas-hint { font-size: 0.6rem; top: 0.5rem; right: 0.5rem; }
+
+  footer { padding: 4vh 4vw; }
+  .footer-grid { grid-template-columns: 1fr; gap: 2.5rem; padding: 5vh 0; }
+  .footer-bottom { padding: 3vh 0; }
+
+  form { max-width: 100%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
 
 /* ---------- Hero / scroll animation placeholder ---------- */
 .scroll-hero {

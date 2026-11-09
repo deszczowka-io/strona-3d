@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { TransformControls } from 'three/addons/controls/TransformControls.js';
-import { STLLoader } from 'three/addons/loaders/STLLoader.js');
+import { STLLoader } from 'three/addons/loaders/STLLoader.js';
 
 // ===== Scena 3D =====
 const scene = new THREE.Scene();
@@ -129,13 +129,40 @@ addEventListener('keydown', (e) => {
 });
 
 // ===== Formularz kontaktowy =====
-document.getElementById('contact-form').addEventListener('submit', (e) => {
+document.getElementById('contact-form').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const btn = e.target.querySelector('button[type="submit"]');
   const name = document.getElementById('name').value.trim();
   const email = document.getElementById('email').value.trim();
   const message = document.getElementById('message').value.trim();
+
   if (!name || !email || !message) {
-    e.preventDefault();
     alert('Wypełnij wszystkie pola.');
+    return;
+  }
+
+  btn.disabled = true;
+  btn.textContent = 'Wysyłanie...';
+
+  try {
+    const res = await fetch('api/contact.php', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name, email, message }),
+    });
+    const data = await res.json();
+
+    if (data.ok) {
+      alert('Wiadomość wysłana — odpowiemy najszybciej jak to możliwe.');
+      e.target.reset();
+    } else {
+      alert(data.error || 'Wystąpił błąd. Spróbuj ponownie.');
+    }
+  } catch {
+    alert('Wystąpił błąd sieci. Spróbuj ponownie.');
+  } finally {
+    btn.disabled = false;
+    btn.textContent = 'Wyślij';
   }
 });
 
@@ -163,4 +190,18 @@ addEventListener('scroll', () => {
     if (s.getBoundingClientRect().top <= 80) cur = s.getAttribute('id');
   });
   links.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + cur));
+});
+
+// Hamburger menu (mobile)
+const toggle = document.getElementById('nav-toggle');
+const navLinks = document.querySelector('.nav-links');
+toggle.addEventListener('click', () => {
+  const open = navLinks.classList.toggle('open');
+  toggle.setAttribute('aria-expanded', open);
+});
+document.querySelectorAll('.nav-links a').forEach(a => {
+  a.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+  });
 });
