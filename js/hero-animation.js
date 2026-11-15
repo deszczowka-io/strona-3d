@@ -9,6 +9,10 @@
   const hero = document.getElementById('hero');
   const placeholder = document.getElementById('hero-placeholder');
   const loadingText = document.getElementById('hero-text');
+  const navbar = document.getElementById('navbar');
+
+  function hideNavbar() { if (navbar) navbar.classList.add('navbar-hidden'); }
+  function showNavbar() { if (navbar) navbar.classList.remove('navbar-hidden'); }
 
   // Loading state: keep placeholder visible until images load (req #14).
   if (loadingText) loadingText.textContent = 'Ładowanie animacji…';
@@ -86,6 +90,8 @@
     gsap.registerPlugin(ScrollTrigger);
 
     // req #4: scrub: 0.5, pin: true, end tuned to animation length.
+    hideNavbar(); // navbar znika na czas animacji
+
     scrollTrigger = ScrollTrigger.create({
       trigger: hero,
       start: 'top top',
@@ -95,6 +101,8 @@
       anticipatePin: 1,
       onUpdate: () => draw(currentFrame()),
       onRefresh: () => draw(currentFrame()),
+      onLeave: showNavbar,        // po zakończeniu animacji – navbar się pokazuje
+      onEnterBack: hideNavbar,    // powrót na górę animacji – navbar znika znowu
     });
 
     addEventListener('resize', () => {
@@ -104,6 +112,7 @@
 
     // Reduced motion: play once, no scroll binding.
     if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      showNavbar();
       scrollTrigger.kill();
       draw(FRAME_COUNT - 1);
     }
