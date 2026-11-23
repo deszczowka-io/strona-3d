@@ -11,7 +11,6 @@
 
   const hero = document.getElementById('hero');
   const placeholder = document.getElementById('hero-placeholder');
-  const loadingText = document.getElementById('hero-text');
   const navbar = document.getElementById('navbar');
 
   function hideNavbar() { if (navbar) navbar.classList.add('navbar-hidden'); }
@@ -26,7 +25,6 @@
 
   const ctx = canvas.getContext('2d');
   const sheets = [];
-  let failed = [];
 
   function sheetPath(i) {
     return `${ASSET_DIR}/sheet-${i + 1}.webp`;
@@ -37,7 +35,7 @@
       const img = new Image();
       img.src = sheetPath(i);
       img.onload = () => { sheets[i] = img; resolve(); };
-      img.onerror = () => { failed.push(i + 1); reject(); }; // req #13
+      img.onerror = reject;
     });
   }
 
@@ -92,7 +90,6 @@
     // All sheets loaded: swap placeholder for canvas (req #14).
     // Hint "Przewiń w dół" zostaje widoczny, by użytkownik wiedział, że może scrollować.
     if (placeholder) placeholder.style.display = 'none';
-    if (loadingText) loadingText.style.display = 'none';
     draw(0);
 
     gsap.registerPlugin(ScrollTrigger);
@@ -122,9 +119,7 @@
       draw(FRAME_COUNT - 1);
     }
   })().catch(() => {
-    if (loadingText) {
-      loadingText.hidden = false;
-      loadingText.textContent = `Nie udało się wczytać arkuszy klatek: ${failed.join(', ') || 'błąd'}`;
-    }
+    showNavbar();
+    hero.remove();
   });
 })();

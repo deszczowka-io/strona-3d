@@ -7,19 +7,30 @@ import { STLLoader } from 'three/addons/loaders/STLLoader.js';
 const scene = new THREE.Scene();
 scene.background = new THREE.Color(0x141414);
 
-const camera = new THREE.PerspectiveCamera(45, innerWidth / innerHeight, 0.1, 2000);
+const camera = new THREE.PerspectiveCamera(45, 1, 0.1, 2000);
 camera.position.set(0, 0, 6);
 
 const root = document.getElementById('canvas-root');
+const fallback = document.querySelector('.canvas-wrap > .canvas-fallback');
 const renderer = new THREE.WebGLRenderer({ antialias: true, powerPreference: 'high-performance' });
-renderer.setSize(innerWidth, innerHeight);
 renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
 root.appendChild(renderer.domElement);
+
+function resizeRenderer() {
+  const { clientWidth, clientHeight } = root;
+  if (!clientWidth || !clientHeight) return;
+  camera.aspect = clientWidth / clientHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(clientWidth, clientHeight, false);
+}
+resizeRenderer();
+new ResizeObserver(resizeRenderer).observe(root);
 
 // Ponytail: WebGL context failure -> static fallback
 let webglOk = true;
 try {
   renderer.render(scene, camera);
+  if (fallback) fallback.hidden = true;
 } catch (err) {
   webglOk = false;
   root.innerHTML = '<div class="canvas-fallback">WebGL niedostępny — model 3D niedostępny na tym urządzeniu.</div>';
@@ -174,12 +185,6 @@ function animate() {
   renderer.render(scene, camera);
 }
 animate();
-
-addEventListener('resize', () => {
-  camera.aspect = innerWidth / innerHeight;
-  camera.updateProjectionMatrix();
-  renderer.setSize(innerWidth, innerHeight);
-});
 
 // ===== Nawigacja: aktywny link =====
 addEventListener('scroll', () => {

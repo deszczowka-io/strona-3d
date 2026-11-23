@@ -11,7 +11,7 @@
 
 <a class="skip" href="#content">Przejdź do treści</a>
 
-<nav class="navbar" id="navbar">
+<nav class="navbar navbar-hidden" id="navbar">
   <div class="brand-wrap">
     <a href="https://www.deszczowka.io" style="text-decoration: none;">
       <div class="brand">Deszczówka<span>.io</span></div>
@@ -34,8 +34,9 @@
 
 <!-- Góra: zarezerwowane miejsce na animację scroll (Gimp → Three.js) -->
 <section id="hero" class="scroll-hero" aria-label="Animacja scroll">
-  <div class="hero-placeholder" id="hero-placeholder">
-    <span id="hero-text" hidden></span>
+  <div class="hero-placeholder" id="hero-placeholder" role="status" aria-live="polite">
+    <span class="hero-loader" aria-hidden="true"></span>
+    <span id="hero-text">Ładowanie animacji…</span>
   </div>
   <p id="hero-scroll-hint" style="position:absolute;bottom:8vh;left:50%;transform:translateX(-50%);color: #000;;opacity:0.6;font-size:clamp(0.9rem,1.5vw,1.2rem);letter-spacing:0.2em;text-transform:uppercase;pointer-events:none;z-index:10;">Przewiń w dół · Scroll down</p>
 </section>
@@ -70,15 +71,17 @@
   </div>
 </section>
 
-<section id="model" class="section alt">
+<!--<section id="model" class="section alt">
   <div class="container">
     <h2>Model 3D</h2>
     <p class="lead"> Obracaj, przybliżaj i przesuwaj model.</p>
     <div class="canvas-wrap" id="canvas-wrap">
-      <div id="canvas-root"></div>
+     - <div id="canvas-root"></div>
       <div class="canvas-fallback" aria-hidden="true">Twoja przeglądarka nie obsługuje WebGL.</div>
-      <div class="canvas-hint">LPM — obrót · PPM — przesunięcie · kółko — zoom<br>
-      1 translacja · 2 rotacja · 3 skala · 0 orbita</div>
+      <div class="canvas-hint">
+        <span class="desktop-hint">LPM — obrót · PPM — przesunięcie · kółko — zoom<br>1 translacja · 2 rotacja · 3 skala · 0 orbita</span>
+        <span class="mobile-hint">Przeciągnij, aby obracać · uszczypnij, aby przybliżyć</span>
+      </div>
       <div class="canvas-controls">
         <button type="button" data-mode="orbit" class="active">Orbita</button>
         <button type="button" data-mode="translate">Translacja</button>
@@ -88,7 +91,7 @@
       </div>
     </div>
   </div>
-</section>
+</section>-->
 
 <section id="kontakt" class="section">
   <div class="container">
