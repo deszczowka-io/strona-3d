@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Analizator Deszczówki · deszczówka.io</title>
+<link rel="preload" as="image" href="animations/deszczowka/sheets/sheet-1.webp">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -34,7 +35,7 @@
 <!-- Góra: zarezerwowane miejsce na animację scroll (Gimp → Three.js) -->
 <section id="hero" class="scroll-hero" aria-label="Animacja scroll">
   <div class="hero-placeholder" id="hero-placeholder">
-    <span id="hero-text">Ładowanie animacji…</span>
+    <span id="hero-text" hidden></span>
   </div>
   <p id="hero-scroll-hint" style="position:absolute;bottom:8vh;left:50%;transform:translateX(-50%);color: #000;;opacity:0.6;font-size:clamp(0.9rem,1.5vw,1.2rem);letter-spacing:0.2em;text-transform:uppercase;pointer-events:none;z-index:10;">Przewiń w dół · Scroll down</p>
 </section>
