@@ -3,8 +3,8 @@
 
 (() => {
   const FRAME_COUNT = 95;
-  const FRAME_PAD = 4; // frame-0001.png .. frame-0095.png
-  const ASSET_DIR = 'animations/deszczowka';
+  const FRAME_PAD = 4; // frame-0001.webp .. frame-0095.webp
+  const ASSET_DIR = 'animations/deszczowka/webp';
 
   const hero = document.getElementById('hero');
   const placeholder = document.getElementById('hero-placeholder');
@@ -26,19 +26,18 @@
 
   const ctx = canvas.getContext('2d');
   const images = [];
-  let loaded = 0;
   let failed = [];
 
   function framePath(i) {
     const n = String(i + 1).padStart(FRAME_PAD, '0');
-    return `${ASSET_DIR}/frame-${n}.png`;
+    return `${ASSET_DIR}/frame-${n}.webp`;
   }
 
   function loadImage(i) {
     return new Promise((resolve, reject) => {
       const img = new Image();
       img.src = framePath(i);
-      img.onload = () => { images[i] = img; loaded += 1; resolve(); };
+      img.onload = () => { images[i] = img; resolve(); };
       img.onerror = () => { failed.push(i + 1); reject(); }; // req #13
     });
   }
@@ -52,8 +51,12 @@
     const cssH = canvas.clientHeight;
     if (!cssW || !cssH) return;
 
-    canvas.width = cssW * dpr;
-    canvas.height = cssH * dpr;
+    const pixelW = Math.round(cssW * dpr);
+    const pixelH = Math.round(cssH * dpr);
+    if (canvas.width !== pixelW || canvas.height !== pixelH) {
+      canvas.width = pixelW;
+      canvas.height = pixelH;
+    }
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     ctx.clearRect(0, 0, cssW, cssH);
     ctx.fillStyle = '#fff';
@@ -79,7 +82,7 @@
   let scrollTrigger;
 
   (async () => {
-    for (let i = 0; i < FRAME_COUNT; i += 1) await loadImage(i);
+    await Promise.all(Array.from({ length: FRAME_COUNT }, (_, i) => loadImage(i)));
 
     // All images loaded: swap placeholder for canvas (req #14).
     // Hint "Przewiń w dół" zostaje widoczny, by użytkownik wiedział, że może scrollować.
@@ -105,10 +108,7 @@
       onEnterBack: hideNavbar,    // powrót na górę animacji – navbar znika znowu
     });
 
-    addEventListener('resize', () => {
-      resize();
-      scrollTrigger.refresh();
-    }); // req #12
+    addEventListener('resize', resize); // req #12
 
     // Reduced motion: play once, no scroll binding.
     if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
